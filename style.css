@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+:root {
+  --primary-color: #625BFE;
+  --primary-color-dark: #7771F6;    
+  --button-color: #5433FF;
+  --button-color-shadow: #5433FF30;
+  --text-color: white;
+  --nav-color:#8ae478;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Mulish;
+}
+
+
+
+.container {
+  display: flex;
+ background:var(--text-color);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color:aliceblue;
+  box-shadow: 0 12px 0 10px #b6b0b0;
+  width: 18rem;
+  padding: 1.8rem 0.85rem;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.5s ease-in-out;
+
+}
+
+.nav a {
+  display: block;
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background-color: #ddd;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Estilos para as seções */
+
+.news-section,
+.chatbot-section {
+    margin-bottom: 20px;
+}
+
+.news-section h2,
+.chatbot-section h2 {
+    color: black;
+}
+
+/* Estilos para o carrossel de notícias */
+
+.owl-carousel .item {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    width: 40%; /* Define a largura do item do carrossel */
+}
+
+.owl-carousel .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.owl-carousel .item h3 {
+    margin-top: 10px;
+}
+
+.owl-carousel .item p {
+    margin-bottom: 10px;
+}
+
+.owl-carousel .item a {
+    display: inline-block;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+/* ================CHATBOT================== */
+
+/* body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+} */
+
+
+
+
+.chat-container {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+  padding: 20px;
+  
+}
+
+.chat-output {
+  padding: 10px;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}

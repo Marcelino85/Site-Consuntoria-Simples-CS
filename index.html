@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="owl.carousel.min.css"> <!-- Arquivo CSS do Owl Carousel -->
+    <link rel="stylesheet" href="owl.theme.default.min.css"> <!-- Arquivo CSS do tema padrão do Owl Carousel -->
+    <title>Consultoria Tributária</title>
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Tributos</a>
+            <div class="dropdown">
+            <a href="#" class="dropbtn">Consultoria Tributária</a>
+            
+            <div class="dropdown-content">
+              <a href="#" onclick="displayStates()">Federal</a>
+              <a href="#" onclick="displaySubcategories('Pernambuco')">Estadual</a>
+              <a href="#" onclick="redirectToWebsite('https://exemplo.com')">Municipal</a>
+            </div>
+        </div>
+        <a href="#chatbot">Chatbot</a>
+        <a href="#">Sociais</a>
+        </div>
+    
+        <div class="content" id="content"></div>
+
+        <main class="content">
+
+          <section class="news-section">
+
+              <h2>Notícias Atualizadas</h2>
+
+              <div id="news-carousel" class="owl-carousel"></div>
+          </section>
+
+          <section class="chatbot-section" id="chatbot">
+              <h2>Chatbot</h2>
+              <!-- Aqui você pode adicionar o chatbot -->
+              <div class="chat-container">
+                <div class="chat-output" id="chat-output"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Digite sua mensagem..." />
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+          </section>
+      </main>
+      </div>
+    
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Biblioteca jQuery -->
+      <script src="owl.carousel.min.js"></script> <!-- Biblioteca Owl Carousel -->
+      <script src="script.js"></script><!-- Arquivo JavaScript -->
+</body>
+</html>
