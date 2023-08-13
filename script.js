@@ -1,4 +1,4 @@
-// ============= FUNÇÃO DE NOTICIAS ====================
+  // ============= FUNÇÃO DE NOTICIAS ====================
 
 const apiKey = 'eb2e63574f8f4f06be3077072e447c60'; // Substitua pelo seu próprio API key da NewsAPI
 
@@ -9,57 +9,66 @@ function fetchNews() {
     // Limpar o conteúdo do carrossel de notícias
     newsCarousel.empty();
 
-    // Fazer a solicitação à API da NewsAPI
-    fetch(`https://newsapi.org/v2/top-headlines?country=br&apiKey=${apiKey}`)
-        .then(response => response.json())
-        .then(data => {
-            // Verificar se a solicitação foi bem-sucedida
-            if (data.status === 'ok') {
-                const articles = data.articles;
+    const keywords = ['tributo trabalhista ', 'direito trabalhista ', 'consultor jurídico', 'Trabalho' , 'tributação' , 'previdênciária']
+    // Palavras-chave para buscar notícias
 
-                // Iterar sobre as notícias retornadas e adicionar aos slides do carrossel
+    // Fazer a solicitação à API da NewsAPI
+    keywords.forEach(keyword =>{
+      fetch(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`)
+          .then(response => response.json())
+          .then(data => {
+        // Verificar se a solicitação foi bem-sucedida
+            if (data.status === 'ok') {
+             const articles = data.articles;
+          
+          // Iterar sobre as notícias retornadas e adicionar aos slides do carrossel
                 articles.forEach(article => {
                     const slide = $('<div>').addClass('item');
                     const img = $('<img>').attr('src', article.urlToImage).attr('alt', article.title);
                     const title = $('<h3>').text(article.title);
                     const description = $('<p>').text(article.description);
                     const link = $('<a>').attr('href', article.url).attr('target', '_blank').text('Leia mais');
-
+                    
                     slide.append(img, title, description, link);
                     newsCarousel.append(slide);
-                });
-
-                // Inicializar o carrossel com as configurações desejadas
-                newsCarousel.owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    nav: true,
-                    dots: false,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    autoplayHoverPause: true,
-                    navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
-                    responsive: {
+                  });
+                  
+                  // Inicializar o carrossel com as configurações desejadas
+                  newsCarousel.owlCarousel({
+                      loop: true,
+                      margin: 10,
+                      nav: true,
+                      dots: false,
+                      autoplay: true,
+                      autoplayTimeout: 5000,
+                      autoplayHoverPause: true,
+                      navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
+                      responsive: {
                         0: {
-                            items: 1
+                          items: 1
                         },
                         600: {
-                            items: 2
+                          items: 2
                         },
                         1000: {
-                            items: 3
+                          items: 3
                         }
-                    }
-                });
-            } else {
-                console.log('Erro ao buscar notícias:', data.message);
-            }
-        })
-        .catch(error => {
-            console.log('Erro na solicitação:', error);
-        });
+                      }
+                    });
+                  } else {
+                  console.log('Erro ao buscar notícias:', data.message);
+                }
+              })
+              .catch(error => {
+                console.log('Erro na solicitação:', error);
+              });
+              
+              
+              
+            })
+              
 }
-
+            
 // Chamar a função fetchNews() quando a página for carregada
 $(document).ready(fetchNews);
 
@@ -131,7 +140,7 @@ function sendMessage() {
     appendMessage('user', userMessage);
 
     // Resposta do Chatbot (simples para este exemplo)
-    const botMessage = "Olá! Sou um chatbot simples. Como posso ajudar?";
+    const botMessage = "🤖 Olá! Sou Optimus Prime. Como posso ajudar?";
     setTimeout(() => appendMessage('bot', botMessage), 1000);
 
     userInput.value = '';
