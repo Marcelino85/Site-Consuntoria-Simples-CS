@@ -13,8 +13,8 @@ function fetchNews() {
     // Palavras-chave para buscar notícias
 
     // Fazer a solicitação à API da NewsAPI
-    keywords.forEach(keyword =>{
-      fetch(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`)
+    keywords.forEach(async keyword =>{
+      await fetch(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`)
           .then(response => response.json())
           .then(data => {
         // Verificar se a solicitação foi bem-sucedida
@@ -76,9 +76,12 @@ $(document).ready(fetchNews);
 
 function displayStates() {
     const states = ["Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"];
-  
+
+    
+
     let content = document.getElementById("content");
     content.innerHTML = "<h2>Estados</h2>";
+    
   
     let list = document.createElement("ul");
   
@@ -87,6 +90,7 @@ function displayStates() {
       item.textContent = state;
       item.addEventListener("click", () => displaySubcategories(state));
       list.appendChild(item);
+      item.style.cssText = 'cursor: pointer;'
     });
   
     content.appendChild(list);
@@ -96,6 +100,7 @@ function displayStates() {
     const subcategories = {
       "Pernambuco": ["ICMS", "ISS", "IPTU"],
       "Acre": ["Descrição Acre","ICMS", "ISS", "IPTU"],
+      "Alagoas": ["ICMS", "ISS", "IPTU"]
       // Adicione outras subcategorias para os demais estados, se necessário
     };
   

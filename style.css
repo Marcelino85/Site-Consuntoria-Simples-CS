@@ -97,7 +97,17 @@
 
 /* Estilos para o carrossel de notícias */
 
+/* .owl-carousel{
+  display: block;
+ flex-direction:row;
+ border: 1px solid red;
+ 
+ 
+} */
+
 .owl-carousel .item {
+ 
+    
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 5px;
