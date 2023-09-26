@@ -88,31 +88,42 @@
 .news-section,
 .chatbot-section {
     margin-bottom: 20px;
-}
+    
+}z
 
 .news-section h2,
 .chatbot-section h2 {
     color: black;
+   
 }
+
+
 
 /* Estilos para o carrossel de notícias */
 
-/* .owl-carousel{
-  display: block;
- flex-direction:row;
- border: 1px solid red;
- 
- 
-} */
+.owl-carousel {
+  display: flex;
+  flex-wrap: nowrap; /* Impede que os itens quebrem em várias linhas */
+  overflow-x: auto; /* Permite a rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* Adiciona rolagem suave em dispositivos móveis */
+  width: 100vw;
+  height: 50vh;
+  
+
+}
+
+.landscape-title{
+  padding: 0%;
+  margin-top: 30%
+  
+}
 
 .owl-carousel .item {
- 
-    
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 5px;
     margin: 5px;
-    width: 40%; /* Define a largura do item do carrossel */
+    min-width: 20%; /* Define a largura mínima dos itens do carrossel */
 }
 
 .owl-carousel .item img {
@@ -168,8 +179,8 @@
  
 }
 .chatbot-section{
-  position: fixed;
-    bottom: 20px;
+  position:absolute;
+    bottom: 40%;
     right: 20px;
 }
 .chat-container {
